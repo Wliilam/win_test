@@ -63,6 +63,20 @@ class Solution:
 
         return result
 
+    def Question5(self, n):
+        if n <=0: return False
+        if n ==1: return True
+
+        if n%2 ==0:
+            return self.Question5(n/2)
+        elif n%3 ==0:
+            return self.Question5(n/3)
+        elif n%5 ==0:
+            return self.Question5(n/5)
+        else:
+            return False
+
+
     def Question6(self, num:int) ->bool:
         if num < 1 :return False
         num = bin(num) 
@@ -83,6 +97,11 @@ print(test.Question2("MCMXCIV"))
 
 print(test.Question3_1(58))
 print(test.Question3_1(1994))
+
+print(test.Question5(6))
+print(test.Question5(8))
+print(test.Question5(14))
+print(test.Question5(1))
 
 print(test.Question6(16))
 print(test.Question6(5))
