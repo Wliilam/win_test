@@ -1,9 +1,3 @@
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
 class Solution:
     def Question1(self, nums:list, target:int):
         new_list = {}
@@ -22,23 +16,7 @@ class Solution:
                 result += map[s[i]]
         result += map[s[-1]]  
         return  result
-
-    def Question3(self, l1:ListNode, l2:ListNode)->ListNode:
-        result = []
-        preResult = result
-        if not l1: return l2
-        if not l2: return l1
-        while l1 and l2:
-            if l1.val <= l2.val:  
-                preResult.next = l1  
-                l1 = l1.next  
-            else:  
-                preResult.next = l2  
-                l2 = l2.next  
-            preResult = preResult.next  
-            preResult.next = l1 or l2  
-  
-        return result.next  
+ 
     def Question3_1(self, num:int)->str:
         map = {1:'I', 4: 'IV', 5:'V', 9:'IX', 10:'X',
                 40:'XL', 50:'L', 90:'XC', 100:'C',
